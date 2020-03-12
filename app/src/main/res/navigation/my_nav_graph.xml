@@ -7,8 +7,8 @@
     <fragment
         android:id="@+id/homeFragment2"
         android:name="com.supremesir.navigationdemo.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        android:label="@string/home"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment2_to_detailFragment2"
             app:destination="@id/detailFragment2"
@@ -18,8 +18,8 @@
     <fragment
         android:id="@+id/detailFragment2"
         android:name="com.supremesir.navigationdemo.DetailFragment"
-        android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" >
+        android:label="@string/detail"
+        tools:layout="@layout/fragment_detail">
         <action
             android:id="@+id/action_detailFragment2_to_homeFragment2"
             app:destination="@id/homeFragment2"
