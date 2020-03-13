@@ -12,8 +12,8 @@
         <action
             android:id="@+id/action_homeFragment2_to_detailFragment2"
             app:destination="@id/detailFragment2"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim" >
+            app:enterAnim="@anim/scale_rotation"
+            app:exitAnim="@anim/slide_to_right">
             <argument
                 android:name="name"
                 android:defaultValue="Tom" />

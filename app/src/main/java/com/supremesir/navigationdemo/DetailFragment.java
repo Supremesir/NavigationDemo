@@ -43,6 +43,5 @@ public class DetailFragment extends Fragment {
         textView.setText(getArguments().getString("my_name"));
 
 
-
     }
 }
