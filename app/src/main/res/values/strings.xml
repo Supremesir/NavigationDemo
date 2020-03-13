@@ -5,4 +5,5 @@
     <string name="detail">Detail</string>
     <string name="btn_home_to_detail">To Detail</string>
     <string name="btn_detail_to_home">To Home</string>
+    <string name="edit_hint">Please Input</string>
 </resources>

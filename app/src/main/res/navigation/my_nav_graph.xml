@@ -13,7 +13,11 @@
             android:id="@+id/action_homeFragment2_to_detailFragment2"
             app:destination="@id/detailFragment2"
             app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim" />
+            app:exitAnim="@anim/nav_default_exit_anim" >
+            <argument
+                android:name="name"
+                android:defaultValue="Tom" />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/detailFragment2"
@@ -25,5 +29,9 @@
             app:destination="@id/homeFragment2"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="Jack" />
     </fragment>
 </navigation>
