@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">NavigationDemo</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Home</string>
     <string name="detail">Detail</string>
+    <string name="btn_home_to_detail">To Detail</string>
+    <string name="btn_detail_to_home">To Home</string>
 </resources>
