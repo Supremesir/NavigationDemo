@@ -27,12 +27,13 @@ import com.supremesir.navigationdemo.databinding.FragmentHomeBinding;
  */
 public class HomeFragment extends Fragment {
 
-    Button button;
-    NavController controller;
-    EditText editText;
-    String editString;
-    Bundle bundle;
 
+//    Button button;
+//    EditText editText;
+//    String editString;
+//    Bundle bundle;
+
+    NavController controller;
     MyViewModel myViewModel;
     FragmentHomeBinding binding;
 
@@ -52,6 +53,9 @@ public class HomeFragment extends Fragment {
         binding.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                int n = Integer.parseInt(binding.editText.getText().toString());
+                myViewModel.getNumber().setValue(n);
                 controller = Navigation.findNavController(v);
                 controller.navigate(R.id.action_homeFragment2_to_detailFragment2);
             }
@@ -88,4 +92,10 @@ public class HomeFragment extends Fragment {
 //            }
 //        });
 //    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        myViewModel.save();
+    }
 }

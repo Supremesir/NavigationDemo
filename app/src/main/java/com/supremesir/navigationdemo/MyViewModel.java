@@ -32,7 +32,7 @@ public class MyViewModel extends AndroidViewModel {
         return handle.getLiveData(key);
     }
 
-    public void load() {
+    private void load() {
         SharedPreferences shp = getApplication().getSharedPreferences(shpName, Context.MODE_PRIVATE);
         int x = shp.getInt(key, 0);
         handle.set(key, x);
@@ -43,5 +43,9 @@ public class MyViewModel extends AndroidViewModel {
         SharedPreferences.Editor editor = shp.edit();
         editor.putInt(key, getNumber().getValue());
         editor.apply();
+    }
+
+    public void add(int n) {
+        handle.set(key, getNumber().getValue() + n);
     }
 }

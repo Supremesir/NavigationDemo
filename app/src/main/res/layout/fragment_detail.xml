@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="data"
+            type="com.supremesir.navigationdemo.MyViewModel" />
 
     </data>
 
@@ -27,7 +30,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/detail"
+                android:text="@{String.valueOf(data.getNumber())}"
                 android:textSize="30sp"
                 app:layout_constraintBottom_toTopOf="@+id/guideline2"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -49,25 +52,27 @@
                 app:layout_constraintVertical_bias="0.533" />
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/buttonadd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_add"
+                android:onClick="@{() -> data.add(1)}"
                 app:layout_constraintBottom_toTopOf="@+id/button2"
-                app:layout_constraintEnd_toStartOf="@+id/button6"
+                app:layout_constraintEnd_toStartOf="@+id/buttonsub"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/buttonsub"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_sub"
+                android:onClick="@{() -> data.add(-1)}"
                 app:layout_constraintBottom_toTopOf="@+id/button2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/button5"
+                app:layout_constraintStart_toEndOf="@+id/buttonadd"
                 app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
