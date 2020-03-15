@@ -45,7 +45,7 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
-        myViewModel = new ViewModelProvider(getActivity(), new SavedStateViewModelFactory(getActivity().getApplication() ,this))
+        myViewModel = new ViewModelProvider(getActivity(), new SavedStateViewModelFactory(getActivity().getApplication(), this))
                 .get(MyViewModel.class);
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false);
         binding.setData(myViewModel);
@@ -54,8 +54,10 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
+                // TODO: 判断EditText中的是否为数字
                 int n = Integer.parseInt(binding.editText.getText().toString());
                 myViewModel.getNumber().setValue(n);
+
                 controller = Navigation.findNavController(v);
                 controller.navigate(R.id.action_homeFragment2_to_detailFragment2);
             }

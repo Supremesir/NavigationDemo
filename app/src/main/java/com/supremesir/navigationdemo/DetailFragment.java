@@ -36,12 +36,6 @@ public class DetailFragment extends Fragment {
 
 
     @Override
-    public void onPause() {
-        super.onPause();
-
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
 
@@ -61,8 +55,6 @@ public class DetailFragment extends Fragment {
 
         return binding.getRoot();
 
-
-
         // Inflate the layout for this fragment
 //        return inflater.inflate(R.layout.fragment_detail, container, false);
     }
@@ -70,14 +62,18 @@ public class DetailFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        getActivity().findViewById(R.id.button2).
-                setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_detailFragment2_to_homeFragment2));
-        textView = getView().findViewById(R.id.textView2);
-        // 直接从Fragment中获取缺省值
-//        textView.setText(getArguments().getString("name"));
-        // 获取从其他Fragment中传入的自定义值
-        textView.setText(getArguments().getString("my_name"));
+//        getActivity().findViewById(R.id.button2).
+//                setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_detailFragment2_to_homeFragment2));
+//        textView = getView().findViewById(R.id.textView2);
+//        // 直接从Fragment中获取缺省值
+////        textView.setText(getArguments().getString("name"));
+//        // 获取从其他Fragment中传入的自定义值
+//        textView.setText(getArguments().getString("my_name"));
+    }
 
-
+    @Override
+    public void onPause() {
+        super.onPause();
+        myViewModel.save();
     }
 }
